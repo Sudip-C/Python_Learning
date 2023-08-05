@@ -52,3 +52,13 @@ def new_string(input_string):
     return reversed_string
 
 print(new_string("sudip"))
+
+name="sudip"
+vowels="aeiou"
+count=0
+for char in name:
+  for c in vowels:
+    if char==c:
+      count=count+1
+
+print(count)
