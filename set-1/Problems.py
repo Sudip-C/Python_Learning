@@ -37,7 +37,7 @@ my_list.sort()
 print(my_list)
 
 num_list=[10,20,25,87]
-sum=0
+sum=0;
 list_len=len(num_list)
 for number in num_list:
   sum+=number
@@ -62,3 +62,58 @@ for char in name:
       count=count+1
 
 print(count)
+import math;
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+def prime(number):
+    if is_prime(number):
+        print(f"{number} is  a prime number.")
+    else:
+        print(f"{number} is  a prime number.")
+
+prime(17)
+
+def factorial(n):
+    if n < 0:
+        return 
+    elif n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n + 1):
+            result *= i
+        return result
+
+input_number = 6
+output_factorial = factorial(input_number)
+print(f"The factorial of {input_number} is: {output_factorial}")
+
+def fibonacci_sequence(n):
+    if n <= 0:
+        return 
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    else:
+        fib_sequence = [0, 1]
+        while len(fib_sequence) < n:
+            next_number = fib_sequence[-1] + fib_sequence[-2]
+            fib_sequence.append(next_number)
+        return fib_sequence
+
+# Test the function with n = 10
+n = 10
+result = fibonacci_sequence(n)
+print(result)
+
+squares = [x ** 2 for x in range(1, 11)]
+print(squares)
