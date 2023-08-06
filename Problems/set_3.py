@@ -119,7 +119,7 @@ count_words_in_file(input_file, output_file)
 
 def divison(a,b):
    if b==0:
-      return "Cannot divide by zero"
+      return "Cannot divide by Zero"
    else :
     return a/b
   
