@@ -81,3 +81,25 @@ defaults = {"designation": 'Developer', "salary": 8000}
 output_result = {employee: defaults.copy() for employee in employees}
 
 print(output_result)
+
+#question 9
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"}
+
+# Keys to extract
+keys = ["name", "salary"]
+extracted_dict = {key: sample_dict[key] for key in keys}
+
+print(extracted_dict)
+
+#question 10
+tuple1 = (11, [22, 33], 44, 55)
+
+_list = list(tuple1[1])
+_list[0] = 222
+updated_tuple = (tuple1[0], _list, tuple1[2], tuple1[3])
+
+print(updated_tuple)
