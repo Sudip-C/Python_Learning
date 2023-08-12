@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Dish</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin-bottom: 30px;
+            font-size: 25px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Dish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Dish Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br><br>
+        <label for="availability">Availability:</label>
+        <input type="checkbox" id="availability" name="availability"><br><br>
+        <input type="submit" value="Add Dish">
+    </form>
+    <li><a href="{% url 'home' %}">Go to Home</a></li>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+</head>
+<body>
+    <h1>Orders</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                Order ID: {{ order.order_id }} - Customer: {{ order.customer_name }} - Status: {{ order.status }}
+                <a href="{% url 'update_order_status' order.order_id 'preparing' %}">Set Preparing</a> |
+                <a href="{% url 'update_order_status' order.order_id 'ready' %}">Set Ready</a> |
+                <a href="{% url 'update_order_status' order.order_id 'delivered' %}">Set Delivered</a>  
+            </li>
+        {% endfor %}
+    </ul>
+    <p>Total Sale: ${{ total_sale }}</p>
+</body>
+</html>

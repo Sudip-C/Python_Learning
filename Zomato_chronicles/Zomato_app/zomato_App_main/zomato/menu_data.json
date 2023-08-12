@@ -1,0 +1,14 @@
+[
+    {
+        "id": 2,
+        "name": "rice",
+        "price": 50.0,
+        "availability": true
+    },
+    {
+        "id": 3,
+        "name": "Chicken curry",
+        "price": 20.0,
+        "availability": true
+    }
+]

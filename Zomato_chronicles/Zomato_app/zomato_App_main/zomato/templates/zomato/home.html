@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            background-color: aqua;
+            padding: 10px;
+        }
+        .items{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(143, 60, 216);
+        }
+        h1{
+            font-size: 35px;
+        }
+    </style>
+    <title>Zesty Zomato</title>
+</head>
+<body>
+   
+    <div class="nav">
+        <h1>Zesty Zomato</h1>
+        <div class="items">
+        <h2><a href="{% url 'menu' %}">Menu</a></h2>
+        <h2><a href="{% url 'add_dish' %}">Add Dish</a></h2>
+        </div>
+    </div>
+    <div>
+        <h1>Welcome to our website</h1>
+    </div>
+</body>
+</html>

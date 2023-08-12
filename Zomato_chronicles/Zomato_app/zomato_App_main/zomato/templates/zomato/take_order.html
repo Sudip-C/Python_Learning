@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Order</title>
+</head>
+<body>
+    <h1>Take Order</h1>
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required><br><br>
+        <label for="dish_ids">Select Dishes:</label>
+        <select id="dish_ids" name="dish_ids" multiple>
+            {% for item in menu %}
+            <option value="{{ item.id }}">{{ item.name }} - Price: ${{ item.price }}{% if item.availability %} (Available){% else %} (Not Available){% endif %}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Place Order">
+    </form>
+</body>
+</html>
