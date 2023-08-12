@@ -1,0 +1,51 @@
+<!-- crud/templates/crud/list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <style>
+        div{
+            text-align: center;
+            font-size:30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        table{
+            margin: auto;
+            /* border: 1px solid black; */
+
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    <h1>
+        Welcome to Django Crud
+    </h1>    
+    <table border="2"  >
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        {% for user in data.values %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+            <a href="{% url 'update' user.email %}">Update</a>
+            <a href="{% url 'delete' user.email %}">Delete</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    <h3><a href="{% url 'create' %}">Create</a></h3>
+</div>
+
+</body>
+</html>
