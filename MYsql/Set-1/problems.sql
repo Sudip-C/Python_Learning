@@ -11,8 +11,8 @@ CREATE TABLE Customers (
 --problem 2
 INSERT INTO Customers VALUES (1, 'Ryan', 'M@gmail.com', 'Kolkata' , '6291847283');
 INSERT INTO Customers VALUES (2, 'Arnold', 'M@gmail.com', 'Kolkata' , '6291847283');
-INSERT INTO Customers VALUES (4, 'John', 'M@gmail.com', 'Kolkata' , '6291847283');
-INSERT INTO Customers VALUES (3, 'Wick', 'M@gmail.com', 'Kolkata' , '6291847283');
+INSERT INTO Customers VALUES (4, 'Johns', 'M@gmail.com', 'Kolkata' , '6291847283');
+INSERT INTO Customers VALUES (3, 'Bonny', 'M@gmail.com', 'Kolkata' , '6291847283');
 INSERT INTO Customers VALUES (5, 'Ateve', 'M@gmail.com', 'Kolkata' , '6291847283');
 --problem 3
 SELECT * FROM Customers 
@@ -25,7 +25,7 @@ SELECT * FROM Customers WHERE id=3
 
 --problem 6
 SELECT * FROM Customers WHERE name LIKE 'A%';
-\
+
 --problem 7
 SELECT * FROM Customers ORDER BY name DESC;
 
@@ -42,3 +42,20 @@ DELETE  FROM Customers WHERE id=2;
 
 --problem 11
 SELECT COUNT(*) FROM Customers;
+
+--problem 12
+SELECT * FROM Customers
+WHERE id NOT IN (
+  SELECT id FROM Customers
+  ORDER BY id ASC
+  LIMIT 2
+);
+
+--problem 13
+SELECT * FROM Customers WHERE name LIKE 'B%'AND id> 2;
+
+--problem 14
+SELECT * FROM Customers WHERE name LIKE '%s'
+
+--problem 15
+SELECT * FROM Customers WHERE phone IS NULL OR phone=''
