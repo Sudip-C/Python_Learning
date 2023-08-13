@@ -23,3 +23,6 @@ SELECT * FROM Restaurants WHERE delivery_available=true AND average_rating > 4
 
 --problem 5
 SELECT * FROM Restaurants WHERE cuisine_type='' OR cuisine_type IS NULL 
+
+--problem 6
+SELECT COUNT(*) FROM Restaurants WHERE delivery_available = true
