@@ -32,3 +32,12 @@ SELECT * FROM Restaurants WHERE location ='New york'
 
 --problem 8
 SELECT AVG(average_rating) AS average FROM Restaurants;
+
+--problem 9
+SELECT * FROM Restaurants
+ORDER BY average_rating DESC
+LIMIT 5;
+
+--problem 10
+ DELETE FROM Restaurants WHERE id 3
+ 
