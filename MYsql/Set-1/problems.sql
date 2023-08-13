@@ -39,3 +39,6 @@ LIMIT 3;
 
 --problem 10
 DELETE  FROM Customers WHERE id=2;
+
+--problem 11
+SELECT COUNT(*) FROM Customers;
