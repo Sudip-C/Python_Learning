@@ -1,31 +1,10 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body{
-            margin: 0px;
-            padding: 0px;
-        }
-        .nav{
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            background-color: aqua;
-            padding: 10px;
-        }
-        .items{
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        a{
-            text-decoration: none;
-            color: rgb(143, 60, 216);
-        }
-        h1{
-            font-size: 35px;
-        }
-    </style>
+    <link href="{% static 'zomato/styles.css' %}" type="text/css" rel="stylesheet">
+    
     <title>Zesty Zomato</title>
 </head>
 <body>
@@ -38,7 +17,7 @@
         </div>
     </div>
     <div>
-        <h1>Welcome to our website</h1>
+        <h1>Welcome to our Zesty Zomato</h1>
     </div>
 </body>
 </html>

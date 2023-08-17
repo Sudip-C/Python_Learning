@@ -1,46 +1,26 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="{% static 'zomato/menu.css' %}" type="text/css" rel="stylesheet">
     <title>Zesty Zomato Menu</title>
-    <style>
-        .menu{
-            width: 40%;
-            margin-right: auto;
-            margin-bottom: 30px;
-            padding: 10px;
-            border: 1px dotted black;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 20px;
-            font-size: 20px;
-        }
-        #update{
-            padding: 9px;
-            background-color: blue;
-            color: white;
-            font-weight: 700;
-            border: none;
-            border-radius: 5px;
-        }
-        #remove{
-            padding: 9px;
-            background-color: red;
-            color: white;
-            font-weight: 700;
-            border: none;
-            border-radius: 5px;
-        }
-        
-    </style>
+   
 </head>
 <body>
-    <h1>Zesty Zomato Menu</h1>
-    
+    <div class="options_cont">
+      <h1>Zesty Zomato Menu</h1>
+      <a href="{% url 'take_order' %}"><h3>Place an Order</h3></a>  
+      <a href="{% url 'orders' %}"><h3>View Orders</h3></a> 
+      <h3><a href="{% url 'home' %}">Go to Home</a></h3>
+    </div>
+    <div class="Menu_Container">
     {% for item in menu %}
         <div class="menu">
-            {{ item.name }} - Price: ${{ item.price }}{% if item.availability %} (Availiable){% else %} (Not Availiable){% endif %}
+           <h2>{{ item.name }}</h2> 
+           <h4>Price: {{ item.price }} $</h4>  
+           {% if item.availability %} (Availiable){% else %} (Not Availiable){% endif %}
             <form method="post" action="{% url 'update_availability' item.id %}">
                 {% csrf_token %}
                 <input type="checkbox" id="availability" name="availability" {% if item.availability %}checked{% endif %}>
@@ -52,10 +32,8 @@
             </form>
         </div>
     {% endfor %}
-    <li><a href="{% url 'home' %}">Go to Home</a></li>
+</div>
 
-    <a href="{% url 'take_order' %}"><h3>Place an Order</h3></a>  <!-- Add this line -->
-    <a href="{% url 'orders' %}"><h3>View Orders</h3></a>  
-    
+
 </body>
 </html>

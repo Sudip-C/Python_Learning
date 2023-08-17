@@ -1,14 +1,26 @@
 [
     {
         "id": 2,
-        "name": "rice",
+        "name": "Rice",
         "price": 50.0,
+        "availability": false
+    },
+    {
+        "id": 2,
+        "name": "Chicken Curry",
+        "price": 100.0,
         "availability": true
     },
     {
         "id": 3,
-        "name": "Chicken curry",
-        "price": 20.0,
+        "name": "Dal",
+        "price": 10.0,
         "availability": true
+    },
+    {
+        "id": 4,
+        "name": "Samosa",
+        "price": 5.0,
+        "availability": false
     }
 ]

@@ -1,0 +1,43 @@
+.Menu_Container{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.options_cont{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.options_cont a{
+    text-decoration: none;
+}
+.Menu_Container .menu{
+    margin-bottom: 30px;
+    padding: 10px 10px 15px 20px;
+    border: 1px dotted black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    font-size: 20px;
+}
+#update{
+    padding: 9px;
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
+#remove{
+    padding: 9px;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
