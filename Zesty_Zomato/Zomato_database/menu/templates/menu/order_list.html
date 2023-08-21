@@ -1,0 +1,59 @@
+<!-- templates/menu/order_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order List</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+         .item1{
+            display: flex;
+            background-color: rgb(190, 252, 252);
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+         a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+        .orders{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="item1">
+        <a href="{% url 'dish_list' %}" ><h1>Order List</h1></a>
+        <a href="{% url 'take_order' %}"><h2>Take New Order</h2> </a>
+    </div>
+
+    <form method="get">
+        <label for="status">Filter by Status:</label>
+        <select name="status" onchange="this.form.submit()">
+            <option value="">All</option>
+            <option value="received" {% if status_filter == 'received' %}selected{% endif %}>Received</option>
+            <option value="preparing" {% if status_filter == 'preparing' %}selected{% endif %}>Preparing</option>
+            <option value="ready" {% if status_filter == 'ready' %}selected{% endif %}>Ready for Pickup</option>
+            <option value="delivered" {% if status_filter == 'delivered' %}selected{% endif %}>Delivered</option>
+        </select>
+    </form>
+    <div class="orders">
+        {% for order in orders %}
+        <div>
+            <h3>Order ID: {{ order.id }}</h3>
+            <h2>Customer : {{order.customer_name}} </h2>
+            <p>Status: {{order.order_status}} </p>
+           <button><a href="{% url 'update_order_status' order.id  %}" >Update Status</a></button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

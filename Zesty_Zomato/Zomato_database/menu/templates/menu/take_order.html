@@ -1,0 +1,23 @@
+<!-- templates/menu/take_order.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take New Order</title>
+</head>
+<body>
+    <h1>Take New Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required><br>
+        <label>Select Dishes:</label><br>
+        {% for dish in dishes %}
+            <input type="checkbox" name="selected_dishes" value="{{ dish.id }}"> {{ dish.dish_name }} - ${{ dish.price }}<br>
+        {% endfor %}
+        <input type="submit" value="Place Order">
+    </form>
+    <a href="{% url 'order_list' %}">View Orders</a>
+    <a href="{% url 'add_dish'  %}" >Add Dish</a>
+
+</body>
+</html>

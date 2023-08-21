@@ -1,0 +1,22 @@
+<!-- templates/menu/update_order_status.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order Status</title>
+</head>
+<body>
+    <h1>Update Order Status</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>{{ order }}</p>
+        <label for="new_status">New Status:</label>
+        <select name="new_status">
+            {% for status in order.STATUS_CHOICES %}
+                <option value="{{ status.0 }}">{{ status.1 }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Update Status">
+    </form>
+    <a href="{% url 'order_list' %}">Back to Order List</a>
+</body>
+</html>

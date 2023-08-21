@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px1;
+        }
+        .dish_list{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap:20px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .dish{
+            padding: 10px;
+            background-color: beige;
+            border-radius: 10px;
+        }
+        .dish a{
+            text-decoration: none;
+        }
+        .item{
+            display: flex;
+            background-color: rgb(190, 252, 252);
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .item a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <h1>Welcome to Zesty Zomato</h1>
+        <a href="{% url 'add_dish' %}"><h2> Add New Dish</h2></a>
+        <a href="{% url 'order_list' %}"><h2>View Orders</h2> </a>
+    </div>
+
+
+<div class="dish_list"> 
+        {% for dish in dishes %}
+        <div class="dish">
+            <h3>{{ dish.dish_name }} -  {% if dish.availability %}(Available){% else %}(Not Available){% endif %}</h3>
+            <h4>$ {{ dish.price }}</h4>
+            <button><a href="{% url 'update_availability' dish.id %}" >Update Availability</a></button>
+            <button><a href="{% url 'remove_dish' dish.id %}" >Remove Dish</a></button>
+
+        </div>
+        {% endfor %}
+    
+</div>
+   
+
+</body>
+</html>
