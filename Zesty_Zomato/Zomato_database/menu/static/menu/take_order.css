@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.item4{
+    display: flex;
+    background-color: rgb(190, 252, 252);
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+.item4 a{
+    text-decoration: none;
+}
+.take_order{
+    width: 30%;
+    margin: auto;
+    background-color: bisque;
+    padding: 15px;
+}
+.take_order_form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* background-color: bisque; */
+}
+input{
+    padding: 10px;
+}
+.submit_button{
+    font-family: cursive;
+    background-color: aquamarine;
+
+}
+.our_menu{
+    font-family: cursive;
+}

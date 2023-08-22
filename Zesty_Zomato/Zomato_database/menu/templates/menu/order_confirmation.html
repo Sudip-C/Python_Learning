@@ -2,10 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .main_body{
+            width: 30%;
+            margin: auto;
+        }
+    </style>
     <title>Order Confirmation</title>
 </head>
 <body>
-    <h1>Order Confirmation</h1>
+
+    <div class="main_body">
+        <h1>Order Confirmation</h1>
     <p>Order ID: {{ order.pk }}</p>
     <p>Customer: {{ order.customer_name }}</p>
     <p>Total Price: ${{ total_price }}</p>
@@ -16,5 +24,6 @@
         {% endfor %}
     </ul>
     <a href="{% url 'order_list' %}">Back to Order List</a>
+    </div>
 </body>
 </html>

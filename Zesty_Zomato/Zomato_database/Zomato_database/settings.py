@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'menu'
+    'menu',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Zomato_database.wsgi.application'
+
+ASGI_APPLICATION = 'Zomato_database.routing.application'
 
 
 # Database

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import Dish, Order
-
+# from channels.layers import get_channel_layer
+# from asgiref.sync import async_to_sync
 
 def dish_list(request):
     dishes = Dish.objects.all()
@@ -71,6 +72,7 @@ def order_list(request):
 
 
 def update_order_status(request, order_id):
+    
     order = get_object_or_404(Order, pk=order_id)
     if request.method == 'POST':
         new_status = request.POST['new_status']
@@ -82,4 +84,5 @@ def update_order_status(request, order_id):
             error_message = "Invalid status update."
             return render(request, 'menu/update_order_status.html', {'order': order, 'error_message': error_message})
     return render(request, 'menu/update_order_status.html', {'order': order})
+    
 

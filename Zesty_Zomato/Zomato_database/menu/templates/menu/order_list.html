@@ -23,18 +23,37 @@
         .orders{
             display: grid;
             grid-template-columns: repeat(3,1fr);
+            margin-top: 20px;
             gap: 20px;
+        }
+        .order_body{
             padding: 15px;
+        }
+        .orders_item{
+            text-align: center;
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+        .orders_item button{
+            border: none;
+            padding: 7px;
+            color: white;
+            background-color: rgb(26, 202, 143);
+            border-radius: 10px;
+        }
+        .orders_item a{
+            color: white;
+            font-family: cursive;
         }
     </style>
 </head>
 <body>
     
     <div class="item1">
-        <a href="{% url 'dish_list' %}" ><h1>Order List</h1></a>
+        <a href="{% url 'dish_list' %}" ><h1>Zesty Zomato</h1></a>
         <a href="{% url 'take_order' %}"><h2>Take New Order</h2> </a>
     </div>
-
+    <div class="order_body">
     <form method="get">
         <label for="status">Filter by Status:</label>
         <select name="status" onchange="this.form.submit()">
@@ -47,7 +66,7 @@
     </form>
     <div class="orders">
         {% for order in orders %}
-        <div>
+        <div class="orders_item">
             <h3>Order ID: {{ order.id }}</h3>
             <h2>Customer : {{order.customer_name}} </h2>
             <p>Status: {{order.order_status}} </p>
@@ -55,5 +74,6 @@
         </div>
         {% endfor %}
     </div>
+</div>
 </body>
 </html>
